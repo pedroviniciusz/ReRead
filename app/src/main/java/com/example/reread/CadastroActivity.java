@@ -1,4 +1,4 @@
-package com.example.appformacaocontinuada;
+package com.example.reread;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -16,7 +16,7 @@ public class CadastroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-        editTextNome = findViewById(R.id.editTxtNome);
+        editTextNome = findViewById(R.id.editTextNome);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextSenha = findViewById(R.id.editTextSenha);
         btnCadastro = findViewById(R.id.btnCadastro);

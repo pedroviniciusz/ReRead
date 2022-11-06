@@ -1,4 +1,4 @@
-package com.example.appformacaocontinuada;
+package com.example.reread;
 
 import android.os.Bundle;
 import android.widget.Button;

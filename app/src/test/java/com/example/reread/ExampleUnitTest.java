@@ -1,4 +1,4 @@
-package com.example.appformacaocontinuada;
+package com.example.reread;
 
 import org.junit.Test;
 
