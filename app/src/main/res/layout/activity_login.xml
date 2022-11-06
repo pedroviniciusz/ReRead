@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/elipse" />
 
     <TextView
-        android:id="@+id/txtViewNovo"
+        android:id="@+id/txtViewPossuiConta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
@@ -61,7 +61,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtViewNovo"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewPossuiConta"
         app:layout_constraintVertical_bias="0.081" />
 
     <Button
@@ -84,8 +84,8 @@
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/input_border_edit"
-        android:drawableLeft="@drawable/email"
-        android:drawablePadding="3dp"
+        android:drawableLeft="@drawable/nome"
+        android:drawablePadding="10dp"
         android:ems="10"
         android:fontFamily="@font/poppins_regular"
         android:hint="E-mail"
@@ -102,7 +102,7 @@
         android:layout_marginBottom="356dp"
         android:background="@drawable/input_border_edit"
         android:drawableLeft="@drawable/password"
-        android:drawablePadding="3dp"
+        android:drawablePadding="10dp"
         android:ems="10"
         android:fontFamily="@font/poppins_regular"
         android:hint="Senha"
@@ -124,7 +124,7 @@
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadastro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,7 +132,7 @@
         app:layout_constraintVertical_bias="0.185" />
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnEntrar"
         android:layout_width="149dp"
         android:layout_height="48dp"
         android:layout_marginBottom="260dp"
