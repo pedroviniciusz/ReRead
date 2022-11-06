@@ -26,6 +26,25 @@
         app:layout_constraintTop_toBottomOf="@+id/txtViewEntrar" />
 
     <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="262dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/input_border_edit"
+        android:drawableLeft="@drawable/email"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:textColorHint="@color/input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNome" />
+
+    <EditText
         android:id="@+id/editTextSenha"
         android:layout_width="262dp"
         android:layout_height="48dp"
@@ -43,24 +62,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="262dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/input_border_edit"
-        android:drawableLeft="@drawable/email"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:fontFamily="@font/poppins_regular"
-        android:hint="E-mail"
-        android:inputType="textEmailAddress"
-        android:textColorHint="@color/input"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNome" />
-
     <Button
         android:id="@+id/btnCadastro"
         android:layout_width="149dp"
@@ -76,21 +77,22 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
-        android:textAlignment="center"
+        android:layout_width="411dp"
+        android:layout_height="149dp"
+        android:layout_marginTop="188dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCadastro"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/elipse_cadastro" />
 
     <TextView
         android:id="@+id/txtViewPossuiConta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_b"
         android:text="Já possui conta?"
         android:textAllCaps="true"
