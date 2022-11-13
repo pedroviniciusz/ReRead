@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ReRead</string>
+    <string name="text_comecar_quiz">Bem vindo(a), Fulano! Agora que você realizou o cadastro no nosso app, responda todas as perguntas do nosso quiz de perfil para entendermos melhor o seu tipo de perfil</string>
+    <string name="questao1">1- Você está confortável com seu nível de didática em sala de aula?</string>
+    <string name="questao2">2 - O seu bem estar está impactando diretamente o seu desempenho no trabalho?</string>v
+    <string name="questao3"> - Na sua área de atuação existe a demanda de uso de tecnologias do cunho da TI?</string>
+    <string name="questao4">4 - Seu nível de aptidão com tecnologias é bom?</string>
 </resources>

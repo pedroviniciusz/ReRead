@@ -50,7 +50,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/input_border_edit"
-        android:drawableLeft="@drawable/password"
+        android:drawableStart="@drawable/password"
         android:drawablePadding="10dp"
         android:ems="10"
         android:fontFamily="@font/poppins_regular"
@@ -82,7 +82,7 @@
         android:layout_marginTop="188dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCadastro"
         app:layout_constraintVertical_bias="1.0"
@@ -112,7 +112,7 @@
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -133,6 +133,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtViewPossuiConta" />
 
     <Button
+        app:backgroundTint="@null"
         android:id="@+id/btnEntrar"
         android:layout_width="149dp"
         android:layout_height="48dp"

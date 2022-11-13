@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnLogin, btnCadastro;
+    private Button btnLogin, btnCadastro, btnComecar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnLogin = findViewById(R.id.btnLogin);
         btnCadastro = findViewById(R.id.btnCadastro);
+        btnComecar = findViewById(R.id.btnComecar);
     }
 
     @Override
@@ -32,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         btnCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(cadastrar);
             }
         });
+
+        btnComecar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent comecar = new Intent(getApplicationContext(), ComecarQuiz.class);
+                startActivity(comecar);
+            }
+        });
+
     }
 
 }
