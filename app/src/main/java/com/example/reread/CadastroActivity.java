@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseNetworkException;
 import com.google.firebase.auth.AuthResult;
@@ -20,6 +22,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -56,6 +63,7 @@ public class CadastroActivity extends AppCompatActivity {
                 auth.createUserWithEmailAndPassword(email, senha).addOnCompleteListener((Activity) CadastroActivity.this, task -> {
                     if (task.isSuccessful()) {
                         Toast.makeText(getApplicationContext(), "Cadastro realizado com sucesso", Toast.LENGTH_LONG).show();
+                        salvarNome(nome);
                         goToApp();
                     } else {
                         try {
@@ -80,6 +88,21 @@ public class CadastroActivity extends AppCompatActivity {
             Intent login = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(login);
         });
+
+    }
+
+    private void salvarNome(String nome) {
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        Map<String, Object> usuario = new HashMap<>();
+        usuario.put("nome", nome);
+
+        String usuarioUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        DocumentReference documento = db.collection("usuarios").document(usuarioUid);
+        documento.set(usuario).addOnCompleteListener((OnCompleteListener<Void>) o -> Log.d("db", "Nome de usuário salvo com sucesso"))
+                .addOnFailureListener(e -> Log.d("db_error", "O nome do usuário não foi salvo " + e.getMessage()));
 
     }
 
