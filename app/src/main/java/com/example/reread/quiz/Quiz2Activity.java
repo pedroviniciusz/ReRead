@@ -1,4 +1,4 @@
-package com.example.reread;
+package com.example.reread.quiz;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.reread.R;
 import com.example.reread.enums.Categoria;
 
 import java.math.BigDecimal;
@@ -121,13 +122,13 @@ public class Quiz2Activity extends AppCompatActivity implements RadioGroup.OnChe
         super.onStart();
 
         btnAnterior.setOnClickListener(view -> {
-            Intent comecarQuiz = new Intent(getApplicationContext(), ComecarQuiz.class);
-            startActivity(comecarQuiz);
+            Intent quiz = new Intent(getApplicationContext(), QuizActivity.class);
+            startActivity(quiz);
         });
 
 
         btnProximo.setOnClickListener(view -> {
-            Intent quiz3 = new Intent(getApplicationContext(), Quiz2Activity.class);
+            Intent quiz3 = new Intent(getApplicationContext(), Quiz3Activity.class);
             quiz3.putExtra("pontosProducaoEnsino", pontosProducaoEnsino);
             quiz3.putExtra("pontosTecnologias", pontosTecnologias);
             quiz3.putExtra("pontosBemEstar", pontosBemEstar);

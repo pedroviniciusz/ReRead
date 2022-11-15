@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/roxo"
-    tools:context=".quiz.QuizActivity">
+    tools:context=".quiz.Quiz4Activity">
 
 
     <ImageView
@@ -205,20 +205,20 @@
         android:text="@string/anterior"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup4"
         app:layout_constraintVertical_bias="0.409" />
 
     <Button
-        android:id="@+id/btnProximo"
+        android:id="@+id/btnEnviar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
         android:layout_marginBottom="24dp"
         android:backgroundTint="@color/verde"
         android:fontFamily="@font/poppins_regular"
-        android:text="@string/proximo"
+        android:text="@string/enviar"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="1.0"
@@ -232,23 +232,11 @@
         android:layout_height="45dp"
         android:background="@drawable/border_textview"
         android:fontFamily="@font/poppins_regular"
-        android:text="@string/questao1"
+        android:text="@string/questao13"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.562"
-        app:layout_constraintStart_toStartOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="365dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/border_textview"
-        android:fontFamily="@font/poppins_regular"
-        android:text="@string/questao1"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView" />
 
     <TextView
@@ -257,7 +245,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border_textview"
         android:fontFamily="@font/poppins_regular"
-        android:text="@string/questao2"
+        android:text="@string/questao14"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
@@ -269,7 +257,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border_textview"
         android:fontFamily="@font/poppins_regular"
-        android:text="@string/questao3"
+        android:text="@string/questao15"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup3"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
@@ -281,7 +269,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border_textview"
         android:fontFamily="@font/poppins_regular"
-        android:text="@string/questao4"
+        android:text="@string/questao16"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup4"
         app:layout_constraintEnd_toEndOf="@+id/imageView"

@@ -29,15 +29,27 @@
             android:name="com.example.reread.CadastroActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.reread.ComecarQuiz"
+            android:name="com.example.reread.quiz.ComecarQuiz"
             android:exported="false">
         </activity>
         <activity
-            android:name="com.example.reread.QuizActivity"
+            android:name="com.example.reread.quiz.QuizActivity"
             android:exported="false">
         </activity>
         <activity
-            android:name="com.example.reread.Quiz2Activity"
+            android:name="com.example.reread.quiz.Quiz2Activity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name="com.example.reread.quiz.Quiz3Activity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name="com.example.reread.quiz.Quiz4Activity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name="com.example.reread.quiz.EscolhaCategoria"
             android:exported="false">
         </activity>
     </application>

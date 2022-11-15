@@ -63,7 +63,6 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <Button
-        app:backgroundTint="@null"
         android:id="@+id/btnCadastro"
         android:layout_width="149dp"
         android:layout_height="48dp"
@@ -72,6 +71,7 @@
         android:fontFamily="@font/poppins_b"
         android:text="@string/cadastrar"
         android:textColor="@color/white"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextSenha" />
@@ -134,7 +134,6 @@
         app:layout_constraintTop_toBottomOf="@+id/txtViewPossuiConta" />
 
     <Button
-        app:backgroundTint="@null"
         android:id="@+id/btnEntrar"
         android:layout_width="149dp"
         android:layout_height="48dp"
@@ -142,6 +141,7 @@
         android:fontFamily="@font/poppins_regular"
         android:text="@string/entrar"
         android:textColor="@color/white"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

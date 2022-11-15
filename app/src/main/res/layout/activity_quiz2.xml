@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/roxo"
-    tools:context=".Quiz2Activity">
+    tools:context=".quiz.Quiz2Activity">
 
 
     <ImageView
@@ -202,7 +202,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/cinza"
         android:fontFamily="@font/poppins_regular"
-        android:text="Anterior"
+        android:text="@string/anterior"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.459"
@@ -218,7 +218,7 @@
         android:layout_marginBottom="24dp"
         android:backgroundTint="@color/verde"
         android:fontFamily="@font/poppins_regular"
-        android:text="Próximo"
+        android:text="@string/proximo"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="1.0"

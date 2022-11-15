@@ -48,7 +48,6 @@
         app:layout_constraintVertical_bias="0.09" />
 
     <Button
-        app:backgroundTint="@null"
         android:id="@+id/btnCadastro"
         android:layout_width="149dp"
         android:layout_height="48dp"
@@ -56,6 +55,7 @@
         android:fontFamily="@font/poppins_regular"
         android:text="@string/cadastre_se"
         android:textColor="@color/white"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,7 +111,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        app:backgroundTint="@null"
         android:id="@+id/btnEntrar"
         android:layout_width="149dp"
         android:layout_height="48dp"
@@ -120,6 +119,7 @@
         android:fontFamily="@font/poppins_regular"
         android:text="@string/entrar"
         android:textColor="@color/white"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtViewEsqueciMinhaSenha" />

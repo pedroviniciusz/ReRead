@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/roxo"
-    tools:context=".quiz.ComecarQuiz">
+    tools:context=".quiz.EscolhaCategoria">
 
     <ImageView
         android:id="@+id/imageView"
@@ -19,15 +19,14 @@
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.198"
-        app:srcCompat="@drawable/img_intro_quiz" />
+        app:layout_constraintVertical_bias="0.198" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="170dp"
-        android:layout_height="27dp"
+        android:layout_width="294dp"
+        android:layout_height="32dp"
         android:fontFamily="@font/poppins_b"
-        android:text="@string/quiz_de_perfil"
+        android:text="@string/escolha_uma_categoria"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/black"
@@ -42,47 +41,51 @@
     <TextView
         android:id="@+id/txtViewTexto"
         android:layout_width="333dp"
-        android:layout_height="84dp"
-        android:layout_marginTop="276dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/poppins_regular"
-        android:text="@string/text_comecar_quiz"
+        android:text="@string/texto_escolha_categoria"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/btnAnterior"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/cinza"
-        android:fontFamily="@font/poppins_regular"
-        android:text="@string/anterior"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        android:id="@+id/btnCategoria1"
+        android:layout_width="196dp"
+        android:layout_height="85dp"
+        android:background="@color/roxo"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/btnCategoria2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/txtViewTexto"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.681" />
 
     <Button
-        android:id="@+id/btnProximo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
+        android:id="@+id/btnCategoria2"
+        android:layout_width="196dp"
+        android:layout_height="85dp"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/verde"
-        android:fontFamily="@font/poppins_regular"
-        android:text="@string/proximo"
+        android:background="@color/roxo"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/btnCategoria3"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/btnCategoria3"
+        android:layout_width="196dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/roxo"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/btnAnterior" />
+        app:layout_constraintStart_toStartOf="@+id/imageView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

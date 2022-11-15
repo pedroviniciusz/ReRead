@@ -1,6 +1,5 @@
-package com.example.reread;
+package com.example.reread.quiz;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,14 +7,12 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.reread.CadastroActivity;
+import com.example.reread.R;
+import com.example.reread.quiz.QuizActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-
-import org.w3c.dom.Document;
 
 public class ComecarQuiz extends AppCompatActivity {
 

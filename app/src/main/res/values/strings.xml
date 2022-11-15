@@ -15,12 +15,26 @@
     <string name="questao2">2 - O seu bem estar está impactando diretamente o seu desempenho no trabalho?</string>v
     <string name="questao3">3 - Na sua área de atuação existe a demanda de uso de tecnologias do cunho da TI?</string>
     <string name="questao4">4 - Seu nível de aptidão com tecnologias é bom?</string>
-    <string name="questao5">5 - Em algum nível a locomoção de sua residência a seu local de trabalho impacta seu desempenho?</string>
+    <string name="questao5">5 -A sua locomoção de sua residência a seu local de trabalho impacta seu desempenho?</string>
     <string name="questao6">6 - Você se sente alheio as demandas socioculturais atuais?</string>
     <string name="questao7">7 - Você se sente apto a conviver e interagir com pessoas com deficiências físicas e mentais?</string>
     <string name="questao8">8 - Seu domínio de Línguas Estrangeiras impacto negativamente o seu desempenho?</string>
+    <string name="questao9">9 - Você atua geralmente com crianças? </string>
+    <string name="questao10">10 - Você apresenta dificuldades na hora da leitura e escrita?</string>
+    <string name="questao11">11 - Você apresenta constante demanda sobre conhecimentos cinegrafistas e derivados?</string>
+    <string name="questao12">12 - Você se sente confortável com seu rotina atual?</string>
+    <string name="questao13">13 - Em relação ao seu desempenho físico você está satisfeito com a situação atual?</string>
+    <string name="questao14">14 - Os conteúdos estudos por você estão presentes em outro idioma?</string>
+    <string name="questao15">15 - Você apresenta constante demanda sobre produção de materiais para a atuação de suas atividades?</string>
+    <string name="questao16">16 - Você consegue atender as duas demandas de trabalho atuais de forma eficaz?</string>
     <string name="sim">Sim</string>
     <string name="parcialmente">Parcialmente</string>
     <string name="nao">Não</string>
     <string name="quiz_de_perfil">Quiz de Perfil</string>
+    <string name="enviar">Enviar</string>
+    <string name="anterior">Anterior</string>
+    <string name="proximo">Próximo</string>
+    <string name="escolha_uma_categoria">Escolha uma categoria</string>
+    <string name="texto_escolha_categoria">Com base no quiz que você acabou de responder, definimos algumas categorias que combinam com você.
+Escolha a categoria que você mais tem interesse em estudar no momento ou a que você têm maior afinidade.</string>
 </resources>
