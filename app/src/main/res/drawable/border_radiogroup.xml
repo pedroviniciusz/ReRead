@@ -2,10 +2,10 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#f0f0f0"/> <!-- cor do sólido -->
-            <corners android:radius="12dp"/> <!-- valor do arredondamento das bordas -->
-            <stroke android:color="#f0f0f0" android:width="2dp"/> <!-- cor da borda e tamanho dela -->
-            <padding android:bottom="8dp" android:left="8dp" android:right="8dp" android:top="8dp"/>
+            <solid android:color="#f0f0f0"/>
+            <corners android:topLeftRadius="0.0dp" android:topRightRadius="0.0dp"
+                android:bottomLeftRadius="12dp" android:bottomRightRadius="12dp"/>
+            <stroke android:color="#f0f0f0" android:width="2dp"/>
         </shape>
     </item>
 </selector>
