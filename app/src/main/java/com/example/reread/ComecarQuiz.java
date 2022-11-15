@@ -24,20 +24,14 @@ public class ComecarQuiz extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        btnAnterior.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent cadastro = new Intent(getApplicationContext(), CadastroActivity.class);
-                startActivity(cadastro);
-            }
+        btnAnterior.setOnClickListener(view -> {
+            Intent cadastro = new Intent(getApplicationContext(), CadastroActivity.class);
+            startActivity(cadastro);
         });
 
-        btnProximo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent quiz = new Intent(getApplicationContext(), QuizActivity.class);
-                startActivity(quiz);
-            }
+        btnProximo.setOnClickListener(view -> {
+            Intent quiz = new Intent(getApplicationContext(), QuizActivity.class);
+            startActivity(quiz);
         });
     }
 }

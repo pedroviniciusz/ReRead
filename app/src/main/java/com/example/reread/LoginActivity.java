@@ -18,14 +18,14 @@ import com.google.firebase.FirebaseNetworkException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
     private Button btnCadastro, btnEntrar;
     private EditText editTextEmail, editTextSenha;
-    private FirebaseAuth auth = FirebaseAuth.getInstance();
+
+    private final FirebaseAuth auth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,45 +43,48 @@ public class LoginActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        btnEntrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String email = editTextEmail.getText().toString().trim();
-                String senha = editTextSenha.getText().toString().trim();
+        btnEntrar.setOnClickListener(view -> {
+            String email = editTextEmail.getText().toString().trim();
+            String senha = editTextSenha.getText().toString().trim();
 
-                if(email.isEmpty() || senha.isEmpty()){
-                    Toast.makeText(getApplicationContext(), "Por favor, preencha os campos corretamente.", Toast.LENGTH_LONG).show();
-                }else{
-                    auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener((Activity) LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(getApplicationContext(), "Login realizado com sucesso", Toast.LENGTH_LONG).show();
-                                goToApp();
-                            } else if (!task.isSuccessful()) {
-                                try {
-                                    throw task.getException();
-                                } catch (FirebaseAuthInvalidCredentialsException e) {
-                                    Toast.makeText(getApplicationContext(), "E-mail ou senha inválidos", Toast.LENGTH_LONG).show();
-                                } catch (FirebaseNetworkException e) {
-                                    Toast.makeText(getApplicationContext(), "Sem conexão com a internet", Toast.LENGTH_LONG).show();
-                                } catch (Exception e) {
-                                    Log.e("ErroCadastro", e.getMessage());
-                                }
-                            }
+            if(email.isEmpty() || senha.isEmpty()){
+                Toast.makeText(getApplicationContext(), "Por favor, preencha os campos corretamente.", Toast.LENGTH_LONG).show();
+            }else{
+                auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener((Activity) LoginActivity.this, task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(getApplicationContext(), "Login realizado com sucesso", Toast.LENGTH_LONG).show();
+                        goToApp();
+                    } else {
+                        try {
+                            throw task.getException();
+                        } catch (FirebaseAuthInvalidCredentialsException e) {
+                            Toast.makeText(getApplicationContext(), "E-mail ou senha inválidos", Toast.LENGTH_LONG).show();
+                        } catch (FirebaseNetworkException e) {
+                            Toast.makeText(getApplicationContext(), "Sem conexão com a internet", Toast.LENGTH_LONG).show();
+                        } catch (Exception e) {
+                            Log.e("Erro no login", e.getMessage());
                         }
-                    });
-                }
+                    }
+                });
             }
         });
 
-        btnCadastro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent cadastro = new Intent(getApplicationContext(), CadastroActivity.class);
-                startActivity(cadastro);
-            }
+        btnCadastro.setOnClickListener(view -> {
+            Intent cadastro = new Intent(getApplicationContext(), CadastroActivity.class);
+            startActivity(cadastro);
         });
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser usuarioAtual = auth.getInstance().getCurrentUser();
+
+        if(usuarioAtual != null){
+            goToApp();
+        }
 
     }
 

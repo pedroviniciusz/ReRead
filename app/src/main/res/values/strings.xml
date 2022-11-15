@@ -1,10 +1,24 @@
 <resources>
     <string name="app_name">ReRead</string>
+    <string name="email">E-mail</string>
+    <string name="senha">Senha</string>
+    <string name="nome">Nome</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="entrar">Entrar</string>
+    <string name="cadastre_se">Cadastre-se</string>
+    <string name="novo_aqui">Novo aqui?</string>
+    <string name="esqueci_minha_senha">Esqueci minha senha</string>
+    <string name="cadastro_de_usuario">Cadastro de Usuário</string>
+    <string name="ja_possui_conta">Já possui conta?</string>
     <string name="text_comecar_quiz">Bem vindo(a), Fulano! Agora que você realizou o cadastro no nosso app, responda todas as perguntas do nosso quiz de perfil para entendermos melhor o seu tipo de perfil</string>
     <string name="questao1">1- Você está confortável com seu nível de didática em sala de aula?</string>
     <string name="questao2">2 - O seu bem estar está impactando diretamente o seu desempenho no trabalho?</string>v
     <string name="questao3">3 - Na sua área de atuação existe a demanda de uso de tecnologias do cunho da TI?</string>
     <string name="questao4">4 - Seu nível de aptidão com tecnologias é bom?</string>
+    <string name="questao5">5 - Em algum nível a locomoção de sua residência a seu local de trabalho impacta seu desempenho?</string>
+    <string name="questao6">6 - Você se sente alheio as demandas socioculturais atuais?</string>
+    <string name="questao7">7 - Você se sente apto a conviver e interagir com pessoas com deficiências físicas e mentais?</string>
+    <string name="questao8">8 - Seu domínio de Línguas Estrangeiras impacto negativamente o seu desempenho?</string>
     <string name="sim">Sim</string>
     <string name="parcialmente">Parcialmente</string>
     <string name="nao">Não</string>

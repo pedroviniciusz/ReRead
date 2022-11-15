@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/roxo"
-    tools:context=".QuizActivity">
+    tools:context=".Quiz2Activity">
 
 
     <ImageView
@@ -245,7 +245,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border_textview"
         android:fontFamily="@font/poppins_regular"
-        android:text="@string/questao1"
+        android:text="@string/questao5"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
@@ -257,7 +257,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border_textview"
         android:fontFamily="@font/poppins_regular"
-        android:text="@string/questao2"
+        android:text="@string/questao6"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
@@ -269,7 +269,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border_textview"
         android:fontFamily="@font/poppins_regular"
-        android:text="@string/questao3"
+        android:text="@string/questao7"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup3"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
@@ -281,7 +281,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border_textview"
         android:fontFamily="@font/poppins_regular"
-        android:text="@string/questao4"
+        android:text="@string/questao8"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup4"
         app:layout_constraintEnd_toEndOf="@+id/imageView"

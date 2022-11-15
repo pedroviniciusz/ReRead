@@ -25,7 +25,8 @@ public class CadastroActivity extends AppCompatActivity {
 
     private Button btnCadastro, btnEntrar;
     private EditText editTextNome, editTextEmail, editTextSenha;
-    private FirebaseAuth auth = FirebaseAuth.getInstance();
+
+    private final FirebaseAuth auth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,56 +45,47 @@ public class CadastroActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        btnCadastro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String nome = editTextNome.getText().toString().trim();
-                String email = editTextEmail.getText().toString().trim();
-                String senha = editTextSenha.getText().toString().trim();
+        btnCadastro.setOnClickListener(view -> {
+            String nome = editTextNome.getText().toString().trim();
+            String email = editTextEmail.getText().toString().trim();
+            String senha = editTextSenha.getText().toString().trim();
 
-                if (nome.isEmpty() || email.isEmpty() || senha.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Por favor, preencha os campos corretamente.", Toast.LENGTH_LONG).show();
-                } else {
-                    auth.createUserWithEmailAndPassword(email, senha).addOnCompleteListener((Activity) CadastroActivity.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(getApplicationContext(), "Cadastro realizado com sucesso", Toast.LENGTH_LONG).show();
-                                goToApp();
-                            } else if (!task.isSuccessful()) {
-                                try {
-                                    throw task.getException();
-                                } catch (FirebaseAuthWeakPasswordException e) {
-                                    Toast.makeText(getApplicationContext(), "A senha deve conter pelo mneos 6 caracteres", Toast.LENGTH_LONG).show();
-                                } catch (FirebaseAuthInvalidCredentialsException e) {
-                                    Toast.makeText(getApplicationContext(), "E-mail ou senha inválidos", Toast.LENGTH_LONG).show();
-                                } catch (FirebaseAuthUserCollisionException e) {
-                                    Toast.makeText(getApplicationContext(), "Já existe cadastro com este e-mail!", Toast.LENGTH_LONG).show();
-                                } catch (FirebaseNetworkException e) {
-                                    Toast.makeText(getApplicationContext(), "Sem conexão com a internet", Toast.LENGTH_LONG).show();
-                                } catch (Exception e) {
-                                    Log.e("ErroCadastro", e.getMessage());
-                                }
-                            }
+            if (nome.isEmpty() || email.isEmpty() || senha.isEmpty()) {
+                Toast.makeText(getApplicationContext(), "Por favor, preencha os campos corretamente.", Toast.LENGTH_LONG).show();
+            } else {
+                auth.createUserWithEmailAndPassword(email, senha).addOnCompleteListener((Activity) CadastroActivity.this, task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(getApplicationContext(), "Cadastro realizado com sucesso", Toast.LENGTH_LONG).show();
+                        goToApp();
+                    } else {
+                        try {
+                            throw task.getException();
+                        } catch (FirebaseAuthWeakPasswordException e) {
+                            Toast.makeText(getApplicationContext(), "A senha deve conter pelo menos 6 caracteres", Toast.LENGTH_LONG).show();
+                        } catch (FirebaseAuthInvalidCredentialsException e) {
+                            Toast.makeText(getApplicationContext(), "E-mail ou senha inválidos", Toast.LENGTH_LONG).show();
+                        } catch (FirebaseAuthUserCollisionException e) {
+                            Toast.makeText(getApplicationContext(), "Já existe cadastro com este e-mail!", Toast.LENGTH_LONG).show();
+                        } catch (FirebaseNetworkException e) {
+                            Toast.makeText(getApplicationContext(), "Sem conexão com a internet", Toast.LENGTH_LONG).show();
+                        } catch (Exception e) {
+                            Log.e("Erro no cadastro", e.getMessage());
                         }
-                    });
-                }
+                    }
+                });
             }
         });
 
-        btnEntrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent login = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(login);
-            }
+        btnEntrar.setOnClickListener(view -> {
+            Intent login = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(login);
         });
 
     }
 
     private void goToApp(){
-        Intent main = new Intent(getApplicationContext(), LoginActivity.class);
-        startActivity(main);
+        Intent login = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(login);
         finish();
     }
 
