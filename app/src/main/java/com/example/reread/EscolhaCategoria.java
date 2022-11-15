@@ -1,11 +1,9 @@
-package com.example.reread.quiz;
+package com.example.reread;
 
 import android.os.Bundle;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.reread.R;
 
 import java.util.ArrayList;
 

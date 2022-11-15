@@ -6,29 +6,15 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.reread.R;
 import com.example.reread.enums.Categoria;
 
-import java.math.BigDecimal;
 
-public class Quiz2Activity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
+public class Quiz2Activity extends BaseQuiz implements RadioGroup.OnCheckedChangeListener {
 
     private RadioGroup rg1, rg2, rg3, rg4;
 
     private Button btnAnterior, btnProximo;
-
-    private static final String NAO = "Não";
-    private static final String PARCIALMENTE = "Parcialmente";
-    private static final String SIM = "Sim";
-
-    private Integer pontosProducaoEnsino = 0;
-    private Integer pontosTecnologias = 0;
-    private Integer pontosBemEstar = 0;
-    private Integer pontosCinemaCultura = 0;
-    private Integer pontosDeficiencias = 0;
-    private Integer pontosLinguasEstrangeiras = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +38,9 @@ public class Quiz2Activity extends AppCompatActivity implements RadioGroup.OnChe
     }
 
     private void recuperarSoma(){
-        pontosProducaoEnsino = getIntent().getIntExtra("pontosProducaoEnsino", 0);
-        pontosTecnologias = getIntent().getIntExtra("pontosTecnologias", 0);
-        pontosBemEstar = getIntent().getIntExtra("pontosBemEstar", 0);
+        setPontosProducaoEnsino(getIntent().getIntExtra("pontosProducaoEnsino", 0));
+        setPontosTecnologias(getIntent().getIntExtra("pontosTecnologias", 0));
+        setPontosBemEstar(getIntent().getIntExtra("pontosBemEstar", 0));
     }
 
     @Override
@@ -79,44 +65,6 @@ public class Quiz2Activity extends AppCompatActivity implements RadioGroup.OnChe
         }
     }
 
-    private Integer atribuirValorReposta(String resposta) {
-        Integer pontos = 0;
-        switch (resposta){
-            case NAO:
-                pontos += BigDecimal.ZERO.intValue();
-                break;
-            case PARCIALMENTE:
-                pontos += BigDecimal.valueOf(5).intValue();
-                break;
-            case SIM:
-                pontos += BigDecimal.TEN.intValue();
-                break;
-            default:
-                throw new IllegalArgumentException();
-        }
-        return pontos;
-    }
-
-    private void somarPontos(Integer valor, Categoria categoria){
-
-        switch (categoria){
-            case PRODUCAO_ENSINO:
-                pontosProducaoEnsino += valor;
-                break;
-            case CINEMA_CULTURA:
-                pontosCinemaCultura += valor;
-                break;
-            case DEFICIENCIAS:
-                pontosDeficiencias += valor;
-                break;
-            case LINGUAS_ESTRANGEIRAS:
-                pontosLinguasEstrangeiras += valor;
-                break;
-            default:
-                throw new IllegalArgumentException();
-        }
-    }
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -129,12 +77,12 @@ public class Quiz2Activity extends AppCompatActivity implements RadioGroup.OnChe
 
         btnProximo.setOnClickListener(view -> {
             Intent quiz3 = new Intent(getApplicationContext(), Quiz3Activity.class);
-            quiz3.putExtra("pontosProducaoEnsino", pontosProducaoEnsino);
-            quiz3.putExtra("pontosTecnologias", pontosTecnologias);
-            quiz3.putExtra("pontosBemEstar", pontosBemEstar);
-            quiz3.putExtra("pontosCinemaCultura", pontosCinemaCultura);
-            quiz3.putExtra("pontosDeficiencias", pontosDeficiencias);
-            quiz3.putExtra("pontosLinguasEstrangeiras", pontosLinguasEstrangeiras);
+            quiz3.putExtra("pontosProducaoEnsino", getPontosProducaoEnsino());
+            quiz3.putExtra("pontosTecnologias", getPontosTecnologias());
+            quiz3.putExtra("pontosBemEstar", getPontosBemEstar());
+            quiz3.putExtra("pontosCinemaCultura", getPontosCinemaCultura());
+            quiz3.putExtra("pontosDeficiencias", getPontosDeficiencias());
+            quiz3.putExtra("pontosLinguasEstrangeiras", getPontosLinguasEstrangeiras());
             startActivity(quiz3);
         });
     }

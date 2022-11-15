@@ -1,7 +1,6 @@
 package com.example.reread.quiz;
 
 import static java.util.Collections.reverseOrder;
-import static java.util.Collections.singleton;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,33 +8,17 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.reread.EscolhaCategoria;
 import com.example.reread.R;
 import com.example.reread.enums.Categoria;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.TreeMap;
 
-public class Quiz4Activity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
+public class Quiz4Activity extends BaseQuiz implements RadioGroup.OnCheckedChangeListener {
 
     private RadioGroup rg1, rg2, rg3, rg4;
 
     private Button btnAnterior, btnEnviar;
-
-    private static final String NAO = "Não";
-    private static final String PARCIALMENTE = "Parcialmente";
-    private static final String SIM = "Sim";
-
-    private Integer pontosProducaoEnsino = 0;
-    private Integer pontosTecnologias = 0;
-    private Integer pontosBemEstar = 0;
-    private Integer pontosCinemaCultura = 0;
-    private Integer pontosDeficiencias = 0;
-    private Integer pontosLinguasEstrangeiras = 0;
-    private Integer pontosLeituraAlfabetizacao = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,13 +42,13 @@ public class Quiz4Activity extends AppCompatActivity implements RadioGroup.OnChe
     }
 
     private void recuperarSoma(){
-        pontosProducaoEnsino = getIntent().getIntExtra("pontosProducaoEnsino", 0);
-        pontosTecnologias = getIntent().getIntExtra("pontosTecnologias", 0);
-        pontosBemEstar = getIntent().getIntExtra("pontosBemEstar", 0);
-        pontosCinemaCultura = getIntent().getIntExtra("pontosCinemaCultura", 0);
-        pontosDeficiencias = getIntent().getIntExtra("pontosDeficiencias", 0);
-        pontosLinguasEstrangeiras = getIntent().getIntExtra("pontosLinguasEstrangeiras", 0);
-        pontosLeituraAlfabetizacao = getIntent().getIntExtra("pontosLeituraAlfabetizacao", 0);
+        setPontosProducaoEnsino(getIntent().getIntExtra("pontosProducaoEnsino", 0));
+        setPontosTecnologias(getIntent().getIntExtra("pontosTecnologias", 0));
+        setPontosBemEstar(getIntent().getIntExtra("pontosBemEstar", 0));
+        setPontosCinemaCultura(getIntent().getIntExtra("pontosCinemaCultura", 0));
+        setPontosDeficiencias(getIntent().getIntExtra("pontosDeficiencias", 0));
+        setPontosLinguasEstrangeiras(getIntent().getIntExtra("pontosLinguasEstrangeiras", 0));
+        setPontosLeituraAlfabetizacao(getIntent().getIntExtra("pontosLeituraAlfabetizacao", 0));
     }
 
     @Override
@@ -89,71 +72,6 @@ public class Quiz4Activity extends AppCompatActivity implements RadioGroup.OnChe
             somarPontos(atribuirValorReposta(resposta), Categoria.PRODUCAO_ENSINO);
         }
     }
-
-    private Integer atribuirValorReposta(String resposta) {
-        Integer pontos = 0;
-        switch (resposta){
-            case NAO:
-                pontos += BigDecimal.ZERO.intValue();
-                break;
-            case PARCIALMENTE:
-                pontos += BigDecimal.valueOf(5).intValue();
-                break;
-            case SIM:
-                pontos += BigDecimal.TEN.intValue();
-                break;
-            default:
-                throw new IllegalArgumentException();
-        }
-        return pontos;
-    }
-
-    private void somarPontos(Integer valor, Categoria categoria){
-
-        switch (categoria){
-            case BEM_ESTAR:
-                pontosBemEstar += valor;
-                break;
-            case LINGUAS_ESTRANGEIRAS:
-                pontosLinguasEstrangeiras += valor;
-                break;
-            case PRODUCAO_ENSINO:
-                pontosProducaoEnsino += valor;
-                break;
-            default:
-                throw new IllegalArgumentException();
-        }
-    }
-
-     private TreeMap<Integer, Categoria> getPontosPorCategoria() {
-
-     TreeMap<Integer, Categoria> pontosPorCategoria = new TreeMap<>(reverseOrder());
-
-     pontosPorCategoria.put(pontosProducaoEnsino, Categoria.PRODUCAO_ENSINO);
-     pontosPorCategoria.put(pontosTecnologias, Categoria.TECNOLOGIAS);
-     pontosPorCategoria.put(pontosBemEstar, Categoria.BEM_ESTAR);
-     pontosPorCategoria.put(pontosCinemaCultura, Categoria.CINEMA_CULTURA);
-     pontosPorCategoria.put(pontosDeficiencias, Categoria.DEFICIENCIAS);
-     pontosPorCategoria.put(pontosLinguasEstrangeiras, Categoria.LINGUAS_ESTRANGEIRAS);
-     pontosPorCategoria.put(pontosLeituraAlfabetizacao, Categoria.LEITURA_ALFABETIZACAO);
-
-     return pontosPorCategoria;
-     }
-
-     private ArrayList<String> getMaisVotadas(TreeMap<Integer, Categoria> categorias) {
-
-     ArrayList<String> valueList = new ArrayList<>();
-
-     while (categorias.size() > 3 ){
-     categorias.remove(categorias.lastKey());
-     }
-     for (Map.Entry<Integer, Categoria> entry : categorias.entrySet()) {
-         valueList.add(entry.getValue().getNome());
-     }
-
-     return valueList;
-
-     }
 
     @Override
     protected void onStart() {

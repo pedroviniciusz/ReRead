@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import com.example.reread.CadastroActivity;
 import com.example.reread.R;
-import com.example.reread.quiz.QuizActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
